@@ -59,3 +59,24 @@ version1 = '7.5.2.4';
 version2 = '7.5.3';
 
 console.log(compareVersion(version1, version2));
+
+/* Method 2
+
+var compareVersion = function(version1, version2) {
+    version1 = version1.split('.');
+    version2 = version2.split('.');
+
+    const len = Math.max(version1.length, version2.length);
+
+    for (let i = 0; i < len; i++) {
+        const v1 = parseInt(version1[i]), v2 = parseInt(version2[i]);
+        const n1 = isNaN(v1) ? 0 : v1;
+        const n2 = isNaN(v2) ? 0 : v2;
+
+        if (n1 !== n2) {
+            return n1 < n2 ? -1 : 1;
+        }
+    }
+    return 0;
+};
+*/
